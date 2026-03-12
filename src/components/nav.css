@@ -24,8 +24,9 @@
 
 /* MenuNav Styles */
 
-.nav{
-    min-height: 5rem;
+.menu-nav{
+    background-color: var(--bg);
+    min-height: 6rem;
 }
 
 .menu-nav-link{

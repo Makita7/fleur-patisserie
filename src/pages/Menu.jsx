@@ -22,7 +22,7 @@ function Menu() {
     return(
         <>
             <img src={HeroMobile} alt=''/>
-            <div>
+            <div className='sticky top-0'>
                 <MenuNav/>
             </div>
             <div id="floral-pastries" className='block md:flex'>
