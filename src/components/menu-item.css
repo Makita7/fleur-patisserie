@@ -1,0 +1,19 @@
+
+/* .menu-item {} */
+
+.menu-item-title {
+    font-size: 2.667rem;
+    text-align: left;
+}
+
+.menu-item-price {
+    font-family: "Inconsolata", monospace;
+    font-size: 2.2rem;
+}
+
+.leaf{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* .menu-item-description {} */

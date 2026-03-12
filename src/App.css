@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --logo: #984C3E;
+  --primary: #E8CFCF;
+  --primary-highlight: #F5E8E8;
+  --primary-accent: #D89A8F;
+  --primary-accent-text: #B86151;
+  --body-text: black;
+  --body-text-white: white;
+  --bg: #FFFBF4;
+  --secondary: #7A8F7A;
+  --secondary-accent: #4E5F4E;
+  --secondary-highlight: #7A8F7A;
+}
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+html {
+  /* Sets 1rem to equal 10px (16px * 0.625 = 10px) */
+  font-size: 62.5%;
+  background-color: var(--bg);
+}
+
+body {
+  /* Sets the main body text size back to 16px (1.6 * 10px = 16px) */
+  font-size: 1.6rem;
+  background-color: var(--bg);
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  font-family: "Inconsolata", monospace;
+}
+
+.align-center {
+  align-items: center !important;
+}
+
+/* Titles */
+
+h3 {
+  font-size: 3rem;
+}
+
+.title-red {
+  color: var(--primary-accent-text);
+}
+
+.title-green {
+  color: var(--secondary-accent);
+}
