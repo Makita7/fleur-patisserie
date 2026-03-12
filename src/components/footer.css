@@ -1,0 +1,30 @@
+
+.footer{
+    min-height: 20rem;
+    background-color: var(--primary-accent-text);
+    color: var(--body-text-white);
+}
+
+.logo{
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+}
+
+.footer-cols{
+    min-width: 20rem;
+}
+
+.footer-icon-cont{
+    height: 2.5rem;
+}
+
+.footer-icon{
+    height: 2.5rem;
+    width: auto;
+    transition: 0.4s;
+    position: absolute;
+}
+
+.footer-icon:hover{
+    height: 2.8rem;
+}
