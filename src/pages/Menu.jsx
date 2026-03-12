@@ -12,6 +12,7 @@ import LatteWeb from '../assets/web-images/latte-web.png'
 
 // Components
 import MenuItem from '../components/MenuItem'
+import MenuNav from '../components/MenuNav'
 
 //Data
 import { floralPastries, herbDesserts, seasonalFruit, drinks } from '../data/menuData'
@@ -22,9 +23,9 @@ function Menu() {
         <>
             <img src={HeroMobile} alt=''/>
             <div>
-                submenu
+                <MenuNav/>
             </div>
-            <div className='block md:flex'>
+            <div id="floral-pastries" className='block md:flex'>
                 <img src={MadeleineMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18'>
                     <h3 className='title-red mt-14 mb-8'>Floral Pastries</h3>
@@ -34,7 +35,8 @@ function Menu() {
                 </div>
                 <img src={MadeleineWeb} className='hidden md:block' alt='hero web' />
             </div>
-            <div className='block md:flex'>
+
+            <div id='herb-desserts' className='block md:flex'>
                 <img src={LemonTartMobile} className='block md:hidden' alt='lemon tart' />
                 <div className='mb-18'>
                     <h3 className='title-green mt-14 mb-8'>Herb Desserts</h3>
@@ -44,7 +46,8 @@ function Menu() {
                 </div>
                 <img src={LemonTartWeb} className='hidden md:block' alt='hero web' />
             </div>
-            <div className='block md:flex'>
+
+            <div id='seasonal-fruit' className='block md:flex'>
                 <img src={StrawberryTartMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18'>
                     <h3 className='title-red mt-14 mb-8'>Seasonal Fruit</h3>
@@ -54,7 +57,8 @@ function Menu() {
                 </div>
                 <img src={StrawberryTartWeb} className='hidden md:block' alt='hero web' />
             </div>
-            <div className='block md:flex'>
+
+            <div id='drinks' className='block md:flex'>
                 <img src={LatteMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18'>
                     <h3 className='mt-14 mb-8 title-green'>Drinks</h3>

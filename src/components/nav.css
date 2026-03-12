@@ -1,0 +1,40 @@
+
+/* Mobile Nav */
+
+.nav{
+    min-height: 5rem;
+}
+
+.nav-link{
+    font-size: 2rem;
+    min-height: 2rem;
+    color: var(--black);
+}
+
+.nav-link:hover{
+    background-color: var(--primary-highlight);
+    color: black;
+}
+
+.nav-link:active{
+    background-color: var(--primary-accent);
+}
+
+
+
+/* MenuNav Styles */
+
+.nav{
+    min-height: 5rem;
+}
+
+.menu-nav-link{
+    font-size: 2rem;
+    min-height: 2rem;
+    color: var(--black);
+}
+
+.menu-nav-link:hover{
+    background-color: #D8C3A5;
+    color: black;
+}
