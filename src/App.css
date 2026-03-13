@@ -55,10 +55,21 @@ h3 {
   font-size: 3rem;
 }
 
+@media (min-width: 768px) {
+  h3 {
+    font-size: 4rem;
+  }
+}
+
 .title-red {
   color: var(--primary-accent-text);
 }
 
 .title-green {
   color: var(--secondary-accent);
+}
+
+.menu-img-desktop{
+  max-width: 70rem;
+  height: auto;
 }

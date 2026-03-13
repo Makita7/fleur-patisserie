@@ -16,4 +16,31 @@
     height: 2.5rem;
 }
 
+.line-red{
+    color: var(--primary-accent-text);
+}
+
+.line-green{
+    color: var(--secondary-accent);
+}
+
+@media (min-width: 768px) {
+    .menu-item-title {
+        font-size: 2.9rem;
+    }
+
+    .menu-item-price {
+        font-size: 3rem;
+    }
+
+    .leaf{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .menu-item-description {
+        font-size: 2rem;
+    }
+}
+
 /* .menu-item-description {} */

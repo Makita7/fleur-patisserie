@@ -1,15 +1,64 @@
 
 // import { Link } from "react-router-dom"
+import { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import './nav.css'
 
 export default function MenuNav() {
+
+    const [activeHash, setActiveHash] = useState(window.location.hash);
+
+    useEffect(() => {
+        const handleHashChange = () => {
+        setActiveHash(window.location.hash);
+        };
+
+        window.addEventListener("hashchange", handleHashChange);
+
+        return () => {
+        window.removeEventListener("hashchange", handleHashChange);
+        };
+    }, []);
+
     return(
-        <div className="menu-nav my-8 flex flex-wrap justify-center align-center">
-            <HashLink smooth to="#floral-pastries" className="menu-nav-link px-6 py-4 mx-4" >floral pastries</HashLink>
-            <HashLink smooth to="#herb-desserts" className="menu-nav-link px-6 py-4 mx-4" >herb desserts</HashLink>
-            <HashLink smooth to="#seasonal-fruit" className="menu-nav-link px-6 py-4 mx-4" >seasonal fruit</HashLink>
-            <HashLink smooth to="#drinks" className="menu-nav-link px-6 py-4 mx-4" >drinks</HashLink>
+        <div className="menu-nav my-6 flex flex-wrap justify-center align-center">
+            <HashLink
+                smooth
+                to="#floral-pastries"
+                className={`menu-nav-link px-6 py-4 mx-4 ${
+                    activeHash === "#floral-pastries" ? "menu-active-link" : ""
+                }`}
+                onClick={() => setActiveHash("#floral-pastries")}
+            >floral pastries
+            </HashLink>
+
+            <HashLink
+                smooth
+                to="#herb-desserts"
+                className={`menu-nav-link px-6 py-4 mx-4 ${
+                    activeHash === "#herb-desserts" ? "menu-active-link" : ""
+                }`}
+                onClick={() => setActiveHash("#herb-desserts")}
+                >herb desserts</HashLink>
+
+            <HashLink
+                smooth
+                to="#seasonal-fruit"
+                className={`menu-nav-link px-6 py-4 mx-4 ${
+                    activeHash === "#seasonal-fruit" ? "menu-active-link" : ""
+                }`}
+                onClick={() => setActiveHash("#seasonal-fruit")}
+                >seasonal fruit</HashLink>
+
+            <HashLink
+                smooth
+                to="#drinks"
+                className={`menu-nav-link px-6 py-4 mx-4 ${
+                    activeHash === "#drinks" ? "menu-active-link" : ""
+                }`}
+                onClick={() => setActiveHash("#drinks")}
+            >drinks</HashLink>
+
         </div>
     )
 }
