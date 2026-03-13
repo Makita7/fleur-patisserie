@@ -1,0 +1,28 @@
+
+
+.garden p{
+    line-height: 1.8;
+}
+
+.line-green{
+    color: var(--secondary-accent);
+}
+
+.garden-hero{
+    min-width: 33rem;
+}
+
+.garden-hero-img-desktop {
+    max-width: 53rem;
+    height: auto;
+}
+
+.garden-macaroon-desktop {
+    max-width: 50rem;
+    height: auto;
+}
+
+.garden-img-table-desktop {
+    max-width: 70rem;
+    height: auto;
+}

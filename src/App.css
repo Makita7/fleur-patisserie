@@ -51,13 +51,26 @@ a {
 
 /* Titles */
 
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
 h3 {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 @media (min-width: 768px) {
-  h3 {
+
+  h1 {
     font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
   }
 }
 
@@ -70,6 +83,11 @@ h3 {
 }
 
 .menu-img-desktop{
-  max-width: 70rem;
+  max-width: 65rem;
+  height: auto;
+}
+
+.menu-img-visit{
+  max-width: 93%;
   height: auto;
 }
