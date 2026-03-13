@@ -1,4 +1,6 @@
 
+import { useEffect,useState } from 'react'
+
 // Mobile Images
 import HeroMobile from '../assets/mobile-images/menu-header-mobile.png'
 import HeroWeb from '../assets/web-images/menu-header-web.png'
@@ -20,14 +22,46 @@ import { floralPastries, herbDesserts, seasonalFruit, drinks } from '../data/men
 
 function Menu() {
 
+    const [activeSection, setActiveSection] = useState("floral-pastries");
+
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section[id]");
+
+        const observer = new IntersectionObserver((entries) => {
+        let visibleSection = null;
+
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (
+                !visibleSection ||
+                entry.intersectionRatio > visibleSection.intersectionRatio
+                ) {
+                visibleSection = entry;
+                }
+            }
+            });
+
+            if (visibleSection) {
+            setActiveSection(visibleSection.target.id);
+            }
+        }, {
+            threshold: [0.25, 0.5, 0.75]
+        });
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
+
     return(
         <>
             <img src={HeroMobile} alt='' className='block md:hidden' />
             <img src={HeroWeb} alt='' className='hidden md:block' />
             <div className='sticky top-0'>
-                <MenuNav/>
+                <MenuNav activeSection={`#${activeSection}`} />
             </div>
-            <div id="floral-pastries" className='block md:flex md:px-[5rem] justify-center items-center'>
+            <section id="floral-pastries" className="block md:flex md:px-[5rem] justify-center items-center">
                 <img src={MadeleineMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18 md:w-1/2 md:pl-[10rem] md:pr-[4rem]'>
                     <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>Floral Pastries</h3>
@@ -36,9 +70,9 @@ function Menu() {
                     ))}
                 </div>
                 <img src={MadeleineWeb} className='hidden md:block menu-img-desktop' alt='hero web' />
-            </div>
+            </section>
 
-            <div id='herb-desserts' className='block md:flex md:px-[5rem] justify-center items-center'>
+            <section id="herb-desserts" className="block md:flex md:px-[5rem] justify-center items-center">
                 <img src={LemonTartMobile} className='block md:hidden' alt='lemon tart' />
                 <img src={LemonTartWeb} className='hidden md:block menu-img-desktop' alt='hero web' />
                 <div className='mb-18 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
@@ -47,9 +81,9 @@ function Menu() {
                         <MenuItem title={herb.title} price={herb.price} description={herb.description} isRed={false} />
                     ))}
                 </div>
-            </div>
+            </section>
 
-            <div id='seasonal-fruit' className='block md:flex md:px-[5rem] justify-center  items-center'>
+            <section id='seasonal-fruit' className='block md:flex md:px-[5rem] justify-center  items-center'>
                 <img src={StrawberryTartMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18 md:w-1/2 md:pl-[10rem] md:pr-[4rem]'>
                     <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>Seasonal Fruit</h3>
@@ -58,9 +92,9 @@ function Menu() {
                     ))}
                 </div>
                 <img src={StrawberryTartWeb} className='hidden md:block menu-img-desktop' alt='hero web' />
-            </div>
+            </section>
 
-            <div id='drinks' className='block md:flex md:px-[5rem] justify-center md:pb-[10rem] items-center'>
+            <section id='drinks' className='block md:flex md:px-[5rem] justify-center md:pb-[10rem] items-center'>
                 <img src={LatteMobile} className='block md:hidden' alt='hero mobile' />
                 <img src={LatteWeb} className='hidden md:block menu-img-desktop' alt='hero web' />
                 <div className='mb-18 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
@@ -69,7 +103,7 @@ function Menu() {
                         <MenuItem title={drink.title} price={drink.price} description={drink.description} isRed={false} />
                     ))}
                 </div>
-            </div>
+            </section>
         </>
     )
 }

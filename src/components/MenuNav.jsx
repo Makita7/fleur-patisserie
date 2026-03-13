@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import './nav.css'
 
-export default function MenuNav() {
+export default function MenuNav({ activeSection }) {
 
     const [activeHash, setActiveHash] = useState(window.location.hash);
 
@@ -26,7 +26,7 @@ export default function MenuNav() {
                 smooth
                 to="#floral-pastries"
                 className={`menu-nav-link px-6 py-4 mx-4 ${
-                    activeHash === "#floral-pastries" ? "menu-active-link" : ""
+                    activeHash && activeSection === "#floral-pastries" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#floral-pastries")}
             >floral pastries
@@ -36,7 +36,7 @@ export default function MenuNav() {
                 smooth
                 to="#herb-desserts"
                 className={`menu-nav-link px-6 py-4 mx-4 ${
-                    activeHash === "#herb-desserts" ? "menu-active-link" : ""
+                    activeHash && activeSection === "#herb-desserts" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#herb-desserts")}
                 >herb desserts</HashLink>
@@ -45,7 +45,7 @@ export default function MenuNav() {
                 smooth
                 to="#seasonal-fruit"
                 className={`menu-nav-link px-6 py-4 mx-4 ${
-                    activeHash === "#seasonal-fruit" ? "menu-active-link" : ""
+                    activeHash && activeSection === "#seasonal-fruit" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#seasonal-fruit")}
                 >seasonal fruit</HashLink>
@@ -54,7 +54,7 @@ export default function MenuNav() {
                 smooth
                 to="#drinks"
                 className={`menu-nav-link px-6 py-4 mx-4 ${
-                    activeHash === "#drinks" ? "menu-active-link" : ""
+                    activeHash && activeSection === "#drinks" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#drinks")}
             >drinks</HashLink>
