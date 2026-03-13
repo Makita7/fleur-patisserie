@@ -82,6 +82,14 @@ h3 {
   color: var(--secondary-accent);
 }
 
+.line-red{
+    color: var(--primary-accent-text);
+}
+
+.line-green{
+    color: var(--secondary-accent);
+}
+
 .menu-img-desktop{
   max-width: 65rem;
   height: auto;
@@ -91,3 +99,4 @@ h3 {
   max-width: 93%;
   height: auto;
 }
+
