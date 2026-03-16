@@ -100,3 +100,13 @@ h3 {
   height: auto;
 }
 
+button{
+  background-color: var(--primary-accent-text);
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: 0.5s;
+}
+
+button:hover{
+  background-color: var(--primary-accent);
+}
