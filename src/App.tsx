@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from './components/ScrollToTop'
 
 
 // Pages
@@ -11,16 +12,18 @@ import Reserve from './pages/Reserve.jsx'
 
 //Components
 import NavMobile from './components/NavMobile'
+import NavWeb from './components/NavWeb'
 import Footer from './components/Footer'
 
 
 function App() {
 
-
   return (
     <>
       <BrowserRouter >
         <NavMobile/>
+        <NavWeb/>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={ <Menu/> } />
           <Route path='/garden' element={ <Garden/> } />

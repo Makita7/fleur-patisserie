@@ -3,6 +3,7 @@
 
 .nav{
     min-height: 5rem;
+    background-color: var(--bg);
 }
 
 .nav-link{
@@ -44,4 +45,17 @@
 .menu-active-link{
     background-color: #D8C3A5;
     color: black;
+}
+
+/* Web Nav */
+
+.nav-web{
+    min-height: 8rem;
+    background-color: var(--bg);
+    border-bottom: black solid 2px;
+}
+
+.nav-logo{
+    font-family: "Playfair Display", serif;
+    font-size: 2.3rem;
 }

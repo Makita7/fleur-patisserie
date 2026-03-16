@@ -21,7 +21,7 @@ export default function MenuNav({ activeSection }) {
     }, []);
 
     return(
-        <div className="menu-nav my-6 flex flex-wrap justify-center align-center">
+        <div className="menu-nav relative md:top-[8rem] mb-6 flex flex-wrap justify-center align-center">
             <HashLink
                 smooth
                 to="#floral-pastries"
