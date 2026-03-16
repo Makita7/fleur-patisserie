@@ -1,3 +1,6 @@
+
+import ReserveTableBtn from '../components/ReserveTableBtn'
+
 // Mobile Images
 import VisitGardenMobile from '../assets/mobile-images/garden-visit-mobile.png'
 import VisitFlowerMobile from '../assets/mobile-images/flower-mobile.png'
@@ -51,14 +54,14 @@ export default function Visit() {
                 </div>
             </div>
 
-            <div className='md:flex md:justify-center md:items-center'>
+            <div className='md:flex md:justify-center md:items-center md:mt-12'>
                 <img src={VisitLattesMobile} className='blobk md:hidden' />
                 <div className='mt-8 mb-12 mx-10 md:pr-[4rem] md:pl-[10rem]'>
                     <img src={VisitLeavesFooterWeb} className='w-1/3 md:w-[28%]' />
                     <h3 className='title-red mb-4'>Plan Your Visit</h3>
                     <p>At Fleur, we believe that enjoying a pastry should be a moment to savor. Our spaces combine soft natural light, greenery, and warm hospitality to create a peaceful escape from the pace of the city.</p>
-                    <div className="flex mt-6 mb-4 justify-end">
-                        <button>Reserve a Table</button>
+                    <div className="flex mt-8 mb-4 justify-end">
+                        <ReserveTableBtn label='Reserve Table' link='' />
                     </div>
                 </div>
                 <img src={VisitLattesWeb} className='hidden md:block w-1/2  py-20 py-20 pr-30 pl-10' />
