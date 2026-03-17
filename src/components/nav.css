@@ -77,10 +77,11 @@
     font-size: 1.4rem;
     background-color: var(--bg);
     color: black;
-    padding: 0.5rem 1.5rem;
+    padding: 0 1rem;
     border-bottom: 0px black solid;
     transition: 0.5s;
     animation-duration: 0.5s;
+    height: 3rem;
 }
 
 .lang-bar .active-lang{

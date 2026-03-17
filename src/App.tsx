@@ -1,5 +1,6 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LanguageProvider from './components/LanguageContext';
 import ScrollToTop from './components/ScrollToTop'
 
 
@@ -19,7 +20,7 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <>
+    <LanguageProvider>
       <BrowserRouter >
         <NavMobile/>
         <NavWeb/>
@@ -33,7 +34,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer/>
-    </>
+    </LanguageProvider>
   )
 }
 

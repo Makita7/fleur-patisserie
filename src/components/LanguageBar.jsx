@@ -1,21 +1,24 @@
-import { useState } from 'react'
+import { useLanguage } from "../components/LanguageContext";
 import Slash from '../assets/slash-language-bar.png'
 
 export default function LanguageBar() {
+    const { lang, setLang } = useLanguage();
 
-    const [activeLang, setActiveLang] = useState('eng');
-
-    return(
-        <div className="flex lang-bar justify-center">
+    return (
+        <div className="lang-bar flex justify-center">
             <button
-                className={`mx-2 ${activeLang === 'spa' ? 'active-lang' : ''}`}
-                onClick={() => setActiveLang('spa')}
-            >SPA</button>
-            <img src={Slash} className='lang-bar-slash' alt='' />
+                className={`pt-2 mx-4 ${lang === "spa" ? "active-lang" : ""}`}
+                onClick={() => setLang("spa")}
+            >
+                SPA
+            </button>
+            <img src={Slash} className="lang-bar-slash" alt="" />
             <button
-                className={`mx-2 ${activeLang === 'eng' ? 'active-lang' : ''}`}
-                onClick={() => setActiveLang('eng')}
-            >ENG</button>
+                className={`pt-2 mx-4 ${lang === "eng" ? "active-lang" : ""}`}
+                onClick={() => setLang("eng")}
+            >
+                ENG
+            </button>
         </div>
-    )
+    );
 }
