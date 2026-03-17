@@ -42,7 +42,7 @@ export default function Reserve() {
                         </div>
                         <p className='mt-4'>{labels.phone}:</p>
                         <p className='mb-8'>{Mendoza.phone}</p>
-                        <ReserveTableBtn label='Reserve Table' link={labels.link} />
+                        <ReserveTableBtn link={labels.link} />
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@ export default function Reserve() {
                         </div>
                         <p className='mt-4'>{labels.phone}:</p>
                         <p className='mb-8'>{BsAs.phone}</p>
-                        <ReserveTableBtn label='Reserve Table' link={labels.link} />
+                        <ReserveTableBtn link={labels.link} />
                     </div>
                 </div>
             </div>

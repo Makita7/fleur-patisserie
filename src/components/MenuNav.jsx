@@ -1,6 +1,6 @@
 
-// import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
+import { useLanguage } from "../components/LanguageContext";
 import { HashLink } from "react-router-hash-link";
 import './nav.css'
 
@@ -20,8 +20,36 @@ export default function MenuNav({ activeSection }) {
         };
     }, []);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 600);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const { lang } = useLanguage();
+    const hashLabels = {
+        eng: {
+            floral: "floral pastries",
+            herb: "herb desserts",
+            seasonal: "seasonal fruit",
+            drinks: "drinks",
+        },
+        spa: {
+            floral: "pasteleria floral",
+            herb: "postres con hierbas",
+            seasonal: "frutas de temporada",
+            drinks: "infusiones",
+        },
+    }
+
     return(
-        <div className="menu-nav relative md:top-32 mb-6 flex flex-wrap justify-center align-center">
+        <div className={`menu-nav relative mb-6 flex flex-wrap justify-center align-center ${isScrolled ? "md:top-32" : "md:top-8"}`}>
             <HashLink
                 smooth
                 to="#floral-pastries"
@@ -29,7 +57,7 @@ export default function MenuNav({ activeSection }) {
                     activeHash && activeSection === "#floral-pastries" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#floral-pastries")}
-            >floral pastries
+            >{ hashLabels[lang].floral }
             </HashLink>
 
             <HashLink
@@ -39,7 +67,7 @@ export default function MenuNav({ activeSection }) {
                     activeHash && activeSection === "#herb-desserts" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#herb-desserts")}
-                >herb desserts</HashLink>
+                >{ hashLabels[lang].herb }</HashLink>
 
             <HashLink
                 smooth
@@ -48,7 +76,7 @@ export default function MenuNav({ activeSection }) {
                     activeHash && activeSection === "#seasonal-fruit" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#seasonal-fruit")}
-                >seasonal fruit</HashLink>
+                >{ hashLabels[lang].seasonal }</HashLink>
 
             <HashLink
                 smooth
@@ -57,7 +85,7 @@ export default function MenuNav({ activeSection }) {
                     activeHash && activeSection === "#drinks" ? "menu-active-link" : ""
                 }`}
                 onClick={() => setActiveHash("#drinks")}
-            >drinks</HashLink>
+            >{ hashLabels[lang].drinks }</HashLink>
 
         </div>
     )

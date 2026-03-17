@@ -30,6 +30,8 @@
 .menu-nav{
     background-color: var(--bg);
     min-height: 8rem;
+    transition: 0.5s;
+    animation-duration: 0.5s;
 }
 
 .menu-nav-link{
