@@ -1,4 +1,6 @@
 
+import { useLanguage } from "../components/LanguageContext";
+import { aboutData } from "../data/aboutData";
 import './about.css'
 
 //Mobile Images
@@ -12,6 +14,10 @@ import AboutLatteWeb from '../assets/web-images/latte-about-web.png'
 import AboutCroissantWeb from '../assets/web-images/croissants-web.png'
 
 export default function About() {
+
+    const { lang } = useLanguage();
+    const about = aboutData[lang];
+
     return(
         <div className='md:px-30'>
             <div className='md:flex md:justify-center md:items-center'>
@@ -20,24 +26,19 @@ export default function About() {
                     <img src={AboutBaristaWeb}  />
                 </div>
                 <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
-                    <h3 className='title-red' >Our Story</h3>
+                    <h3 className='title-red' >{about.title}</h3>
                     <hr className='line-red mb-5' />
-                    <p>
-                        Fleur Patisserie was founded with a love for fresh ingredients and thoughtful baking. Inspired by seasonal fruits, herbs, and natural flavors, our pastries celebrate the beauty of simple ingredients prepared with care.
-                        <br/>
-                        We believe baking is an art. One that blends creativity, craftsmanship, and passion. Every dessert is designed to bring together flavor, texture, and beauty in a way that feels both elegant and comforting.
-                    </p>
+                    <p className="mb-8">{about.textHeader1}</p>
+                    <p>{about.textHeader2}</p>
                 </div>
             </div>
             <div className='md:flex md:justify-center md:items-center'>
                 <img src={AboutLatteMobile} className='block md:hidden' />
                 <div className='mt-8 mb-12 mx-10 md:pr-[4rem] md:pl-[10rem]'>
-                    <h3 className='title-red' >Our Coffee & Tea</h3>
+                    <h3 className='title-red' >{about.titleOurCoffee}</h3>
                     <hr className='line-red mb-5' />
-                    <p>
-                        We serve a variety of teas and freshly ground coffee made from carefully selected coffee beans, crafted to complement the delicate flavors of our pastries.<br/>
-                        Brewing is part of the ritual at Fleur. Each drink is prepared with patience and care, highlighting the natural aromas of the beans and tea leaves.
-                    </p>
+                    <p className="mb-8">{about.textOurCoffee1}</p>
+                    <p>{about.textOurCoffee2}</p>
                 </div>
                 <img src={AboutLatteWeb} className='hidden md:block w-1/2 py-20 pl-30 pr-10' />
             </div>
@@ -47,13 +48,10 @@ export default function About() {
                     <img src={AboutCroissantWeb} className='' />
                 </div>
                 <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
-                    <h3 className='title-red'>Our Pastries</h3>
+                    <h3 className='title-red'>{about.titleOurPastries}</h3>
                     <hr className='line-red mb-5'/>
-                    <p>
-                        Our pastries are inspired by classic French baking traditions and crafted with fresh, regional ingredients. From delicate macarons to buttery tarts and fragrant cakes, each dessert reflects a balance of technique, flavor, and creativity.
-                        <br/>
-                        We combine the elegance of French pastry with the richness of local seasonal produce. The result is a collection of desserts that celebrate both tradition and the natural flavors of our region.
-                    </p>
+                    <p className="mb-8">{about.textOurPastries1}</p>
+                    <p>{about.textOurPastries2}</p>
                 </div>
             </div>
         </div>
