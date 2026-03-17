@@ -1,7 +1,26 @@
 
-//ENGLISH
 
-export const locationsEng = [
+export const reserveLabels = {
+    eng: {
+        address: "Address",
+        hours: "Hours",
+        monFri: "Mon - Fri",
+        satSun: "Sat - Sun",
+        phone: "Phone",
+        reserveBtn: "Reserve Table"
+    },
+    spa: {
+        address: "Dirección",
+        hours: "Horarios",
+        monFri: "Lun - Vie",
+        satSun: "Sáb - Dom",
+        phone: "Teléfono",
+        reserveBtn: "Reservar mesa"
+    }
+};
+
+
+export const locations = [
     {
         location:"Mendoza",
         address:'Av. San Martín Sur 698, Godoy Cruz, Mendoza',
