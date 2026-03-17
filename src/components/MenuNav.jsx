@@ -6,7 +6,7 @@ import './nav.css'
 
 export default function MenuNav({ activeSection }) {
 
-    const [activeHash, setActiveHash] = useState(window.location.hash);
+    const [activeHash, setActiveHash] = useState('#floral-pastries');
 
     useEffect(() => {
         const handleHashChange = () => {
@@ -21,7 +21,7 @@ export default function MenuNav({ activeSection }) {
     }, []);
 
     return(
-        <div className="menu-nav relative md:top-[8rem] mb-6 flex flex-wrap justify-center align-center">
+        <div className="menu-nav relative md:top-32 mb-6 flex flex-wrap justify-center align-center">
             <HashLink
                 smooth
                 to="#floral-pastries"
