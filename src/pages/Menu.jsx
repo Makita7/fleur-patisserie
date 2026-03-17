@@ -1,5 +1,6 @@
 
 import { useEffect,useState } from 'react'
+import { useLanguage } from "../components/LanguageContext";
 
 // Mobile Images
 import HeroMobile from '../assets/mobile-images/menu-header-mobile.png'
@@ -26,6 +27,11 @@ function Menu() {
 
     const [activeSection, setActiveSection] = useState("floral-pastries");
 
+    const { lang } = useLanguage();
+    const floral = floralPastries[lang];
+    const herb = herbDesserts[lang];
+    const seasonal = seasonalFruit[lang];
+    const drink = drinks[lang];
 
     useEffect(() => {
         const sections = document.querySelectorAll("section[id]");
@@ -66,8 +72,8 @@ function Menu() {
             <section id="floral-pastries" className="block md:flex md:px-[5rem] justify-center items-center">
                 <img src={MadeleineMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18 md:w-1/2 md:pl-[10rem] md:pr-[4rem]'>
-                    <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>Floral Pastries</h3>
-                    {floralPastries.map((pastry, index) => (
+                    <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>{lang === 'eng' ? "Floral Pastries" : "Pasteleria Floral"}</h3>
+                    {floral.map((pastry, index) => (
                         <MenuItem title={pastry.title} price={pastry.price} description={pastry.description} isRed={true} isLast={index === floralPastries.length - 1} />
                     ))}
                 </div>
@@ -78,8 +84,8 @@ function Menu() {
                 <img src={LemonTartMobile} className='block md:hidden' alt='lemon tart' />
                 <img src={LemonTartWeb} className='hidden md:block menu-img-desktop  py-20' alt='hero web' />
                 <div className='mb-18 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
-                    <h3 className='title-green mt-14 mb-8 md:mb-12 text-center'>Herb Desserts</h3>
-                    {herbDesserts.map((herb) => (
+                    <h3 className='title-green mt-14 mb-8 md:mb-12 text-center'>{lang === 'eng' ? "Herb Desserts" : "Postres con Hierbas" }</h3>
+                    {herb.map((herb) => (
                         <MenuItem title={herb.title} price={herb.price} description={herb.description} isRed={false} />
                     ))}
                 </div>
@@ -88,8 +94,8 @@ function Menu() {
             <section id='seasonal-fruit' className='block md:flex md:px-[5rem] justify-center  items-center'>
                 <img src={StrawberryTartMobile} className='block md:hidden' alt='hero mobile' />
                 <div className='mb-18 md:w-1/2 md:pl-[10rem] md:pr-[4rem]'>
-                    <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>Seasonal Fruit</h3>
-                    {seasonalFruit.map((fruit) => (
+                    <h3 className='title-red mt-14 mb-8 md:mb-12 text-center'>{lang === 'eng' ? "Seasonal Fruit" : "Frutas de Temporada" }</h3>
+                    {seasonal.map((fruit) => (
                         <MenuItem title={fruit.title} price={fruit.price} description={fruit.description} isRed={true} />
                     ))}
                 </div>
@@ -100,8 +106,8 @@ function Menu() {
                 <img src={LatteMobile} className='block md:hidden' alt='hero mobile' />
                 <img src={LatteWeb} className='hidden md:block menu-img-desktop pt-20' alt='hero web' />
                 <div className='mb-18 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
-                    <h3 className='mt-14 mb-8 md:mb-12 title-green text-center'>Drinks</h3>
-                    {drinks.map((drink) => (
+                    <h3 className='mt-14 mb-8 md:mb-12 title-green text-center'>{lang === 'eng' ?  "Drinks" : "Infusiones" }</h3>
+                    {drink.map((drink) => (
                         <MenuItem title={drink.title} price={drink.price} description={drink.description} isRed={false} />
                     ))}
                 </div>
