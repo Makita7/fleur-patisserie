@@ -10,7 +10,9 @@ export default function NavMobile() {
 
     return(
         <div className="hidden md:flex justify-between items-center nav-web mt-8 px-40 z-10 sticky top-0">
-            <p className="nav-logo">Fleur Patisserie</p>
+            <NavLink to="/">
+                <p className="nav-logo">Fleur Patisserie</p>
+            </NavLink>
             <div className="flex">
                 { links.map((link) => (
                     <NavLink
