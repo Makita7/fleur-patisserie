@@ -1,6 +1,6 @@
+import type { Language, NavLink } from "../types/appTypes";
 
-
-export const navLinks = {
+export const navLinks: Record<Language, NavLink[]> = {
     eng: [
         { to: "/", label: "menu", end: true },
         { to: "/garden", label: "garden" },
@@ -14,5 +14,5 @@ export const navLinks = {
         { to: "/about", label: "quiénes somos" },
         { to: "/visit", label: "visitas" },
         { to: "/reserve", label: "reservas" },
-    ]
+    ],
 };

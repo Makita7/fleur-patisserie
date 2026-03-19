@@ -1,6 +1,6 @@
+import type { Language, ReserveLabel, LocationsData } from "../types/appTypes";
 
-
-export const reserveLabels = {
+export const reserveLabels: Record<Language, ReserveLabel> = {
     eng: {
         address: "Address",
         hours: "Hours",
@@ -20,7 +20,7 @@ export const reserveLabels = {
 };
 
 
-export const locations = [
+export const locations:LocationsData[] = [
     {
         location:"Mendoza",
         address:'Av. San Martín Sur 698, Godoy Cruz, Mendoza',

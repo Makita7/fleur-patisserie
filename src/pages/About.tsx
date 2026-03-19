@@ -25,7 +25,7 @@ export default function About() {
                 <div className='hidden md:flex md:w-1/2 justify-end py-20 pl-30 pr-10'>
                     <img src={AboutBaristaWeb}  />
                 </div>
-                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-16 md:pr-40'>
                     <h3 className='title-red' >{about.title}</h3>
                     <hr className='line-red mb-5' />
                     <p className="mb-8">{about.textHeader1}</p>
@@ -34,7 +34,7 @@ export default function About() {
             </div>
             <div className='md:flex md:justify-center md:items-center'>
                 <img src={AboutLatteMobile} className='block md:hidden' />
-                <div className='mt-8 mb-12 mx-10 md:pr-[4rem] md:pl-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:pr-16 md:pl-40'>
                     <h3 className='title-red' >{about.titleOurCoffee}</h3>
                     <hr className='line-red mb-5' />
                     <p className="mb-8">{about.textOurCoffee1}</p>
@@ -47,7 +47,7 @@ export default function About() {
                 <div className='hidden md:flex md:w-1/2 justify-end py-20 pr-30 pl-10'>
                     <img src={AboutCroissantWeb} className='' />
                 </div>
-                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-16 md:pr-40'>
                     <h3 className='title-red'>{about.titleOurPastries}</h3>
                     <hr className='line-red mb-5'/>
                     <p className="mb-8">{about.textOurPastries1}</p>

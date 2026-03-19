@@ -2,7 +2,15 @@ import "./menu-item.css";
 import Leaf from '../assets/leaf.png'
 import LeafPink from '../assets/leaf-pink.png'
 
-export default function MenuItem({ title, price, description, isLast, isRed }) {
+type Props = {
+    title: string;
+    price: number;
+    description: string;
+    isLast: Boolean;
+    isRed: Boolean;
+}
+
+export default function MenuItem({ title, price, description, isLast, isRed } : Props) {
     return (
         <div key={title} className={`menu-item mx-8 mb-4`}>
             <div className="flex align-center text-wrap">

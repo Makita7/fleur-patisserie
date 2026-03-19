@@ -1,6 +1,6 @@
+import type { VisitDataType } from '../types/appTypes';
 
-
-export const visit = {
+export const visit: VisitDataType =  {
     eng: {
         title: "Visit Fleur",
         textHeader: "Step into a calm garden atmosphere where pastries, coffee, and nature come together. Whether you're stopping by for a quick espresso or a slow afternoon with friends, Fleur Patisserie is a place to pause and enjoy the moment.",

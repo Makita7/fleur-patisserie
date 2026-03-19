@@ -26,7 +26,7 @@ export default function Visit() {
     return(
         <div className='md:px-30'>
             <div className='md:flex md:justify-center'>
-                <div className='mt-8 mb-12 mx-10 md:pr-[4rem] md:pl-[10rem] md:mt-[14rem]'>
+                <div className='mt-8 mb-12 mx-10 md:pr-16 md:pl-40 md:mt-56'>
                     <h1 className='title-red'>{visits.title}</h1>
                     <hr className='line-red mb-4' />
                     <p>{visits.textHeader}</p>
@@ -39,13 +39,13 @@ export default function Visit() {
             <div className='md:flex mt-20 md:mt-40 md:mb-20'>
                 <img src={VisitFlowerMobile} className='blobk md:hidden' />
                 <img src={VisitFlowerWeb} className='hidden md:block w-1/2' />
-                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem] md:mt-[6rem]'>
+                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-16 md:pr-40 md:mt-24'>
                     <h3 className='title-red mb-4' >{visits.titlePlace}</h3>
                     <p>{visits.textPlace}</p>
                 </div>
             </div>
 
-            <div className='text-center my-40 mx-10 md:flex md:flex-col md:items-center md:justify-center md:w-1/2 md:mx-auto md:h-[22rem]'>
+            <div className='text-center my-40 mx-10 md:flex md:flex-col md:items-center md:justify-center md:w-1/2 md:mx-auto md:h-88'>
                 <h3 className='title-red mb-4' >{visits.titleSeating}</h3>
                 <p className=''>{visits.textSeating}</p>
             </div>
@@ -53,7 +53,7 @@ export default function Visit() {
             <div className='md:flex md:justify-center md:items-center'>
                 <img src={VisitVeggiesMobile} className='blobk md:hidden' />
                 <img src={VisitVeggiesWeb} className='hidden md:block w-1/3' />
-                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:w-1/2 md:pl-16 md:pr-40'>
                     <h3 className='title-green mb-4'>{visits.titleBotanical}</h3>
                     <p>{visits.textBotanical}</p>
                     <a>{visits.linkText}</a>
@@ -62,7 +62,7 @@ export default function Visit() {
 
             <div className='md:flex md:justify-center md:items-center md:mt-12'>
                 <img src={VisitLattesMobile} className='blobk md:hidden' />
-                <div className='mt-8 mb-12 mx-10 md:pr-[4rem] md:pl-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:pr-16 md:pl-40'>
                     <img src={VisitLeavesFooterWeb} className='w-1/3 md:w-[28%]' />
                     <h3 className='title-red mb-4'>{visits.titlePlan}</h3>
                     <p>{visits.textPlan}</p>
@@ -70,7 +70,7 @@ export default function Visit() {
                         <ReserveTableBtn link='' />
                     </div>
                 </div>
-                <img src={VisitLattesWeb} className='hidden md:block w-1/2  py-20 py-20 pr-30 pl-10' />
+                <img src={VisitLattesWeb} className='hidden md:block w-1/2  py-20 pr-30 pl-10' />
             </div>
 
 

@@ -1,4 +1,4 @@
-import { useLanguage } from "../components/LanguageContext";
+import { useLanguage } from "./LanguageContext";
 import Slash from '../assets/slash-language-bar.png'
 
 export default function LanguageBar() {

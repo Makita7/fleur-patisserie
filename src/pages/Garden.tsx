@@ -23,31 +23,31 @@ export default function Garden() {
 
     return (
         <div className='garden'>
-            <div className='block md:flex md:px-[5rem] justify-center items-center'>
+            <div className='block md:flex md:px-20 justify-center items-center'>
                 <img src={GardenHeroMobile} className="block md:hidden" />
                 <div className='hidden md:flex justify-end w-1/2'>
                     <img src={GardenHeroWeb} className=" garden-hero-img-desktop" />
                 </div>
-                <div className='px-8 mt-8 mb-14 md:mb-0 md:w-1/2 md:pl-[4rem] md:pr-[10rem] text-center md:text-left md:my-0'>
+                <div className='px-8 mt-8 mb-14 md:mb-0 md:w-1/2 md:pl-16 md:pr-40 text-center md:text-left md:my-0'>
                     <h1 className='title-green'>{gardenData.title}</h1>
                     <p>{gardenData.textHeader}</p>
                     <hr className='line-green' />
                 </div>
             </div>
 
-            <div className='block md:flex md:px-[5rem] justify-center items-center md:h-[60rem]'>
+            <div className='block md:flex md:px-20 justify-center items-center md:h-240'>
                 <img src={GardenMacaroonsMobile} className="block md:hidden" />
-                <div className='mt-8 mb-12 mx-10 md:my-0 md:w-1/2 md:pl-[10rem] md:pr-[4rem]'>
+                <div className='mt-8 mb-12 mx-10 md:my-0 md:w-1/2 md:pl-40 md:pr-16'>
                     <h3 className='title-red'>{gardenData.titleUnwind}</h3>
                     <p>{gardenData.textUnwind}</p>
                 </div>
                 <img src={GardenMacaroonsWeb} className="hidden md:block garden-macaroon-desktop" />
             </div>
 
-            <div className='block md:flex md:px-[5rem] justify-center items-center'>
+            <div className='block md:flex md:px-20 justify-center items-center'>
                 <img src={GardenTableMobile} className="block md:hidden" />
                 <img src={GardenTableWeb} className="hidden md:block garden-img-table-desktop" />
-                <div className='mt-8 mb-12 mx-10 md:my-0 md:w-1/2 md:pl-[4rem] md:pr-[10rem]'>
+                <div className='mt-8 mb-12 mx-10 md:my-0 md:w-1/2 md:pl-16 md:pr-40'>
                     <h3 className='title-green'>{gardenData.titleSeason}</h3>
                     <p>{gardenData.textSeason}</p>
                 </div>

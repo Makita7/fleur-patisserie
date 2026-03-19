@@ -1,5 +1,7 @@
 
-export const aboutData = {
+import type { Language, AboutData } from "../types/appTypes"
+
+export const aboutData: Record<Language, AboutData> = {
     eng: {
         title: 'Our Story',
         textHeader1: `Fleur Patisserie was founded with a love for fresh ingredients and thoughtful baking. Inspired by seasonal fruits, herbs, and natural flavors, our pastries celebrate the beauty of simple ingredients prepared with care.`,

@@ -1,7 +1,11 @@
-import { useLanguage } from "../components/LanguageContext";
+import { useLanguage } from "./LanguageContext";
 import ArrowIcon from '../assets/white-arrow-icon.png'
 
-export default function ReserveTableBtn({link}){
+type Props = {
+    link: string;
+}
+
+export default function ReserveTableBtn({link} : Props){
     const { lang } = useLanguage();
 
     const labels = {

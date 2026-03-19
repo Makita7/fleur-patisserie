@@ -1,6 +1,7 @@
 
+import type { Garden, Language } from "../types/appTypes"
 
-export const garden = {
+export const garden: Record<Language, Garden> = {
     eng: {
         title: "Our Garden",
         textHeader: "A quiet corner to enjoy pastries, coffee, and fresh air.",

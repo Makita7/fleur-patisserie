@@ -1,7 +1,7 @@
+import type { ListFoods } from './../types/appTypes';
 
-//ENGLISH
 
-export const floralPastries = {
+export const floralPastries: ListFoods = {
     eng: [
         {
             title: "Lavender Macarons",
@@ -48,7 +48,7 @@ export const floralPastries = {
     ]
 }
 
-export const herbDesserts = {
+export const herbDesserts: ListFoods = {
     eng: [
         {
             title:"Basil Lemon Tart",
@@ -85,7 +85,7 @@ export const herbDesserts = {
     ],
 }
 
-export const seasonalFruit = {
+export const seasonalFruit: ListFoods = {
     eng: [
         {
             title:"Strawberry Pistachio Tart",
@@ -122,7 +122,7 @@ export const seasonalFruit = {
     ],
 }
 
-export const drinks = {
+export const drinks: ListFoods = {
     eng: [
         {
             title:"Chamomile Honey Latte",

@@ -1,4 +1,4 @@
-import { useLanguage } from "../components/LanguageContext";
+import { useLanguage } from "./LanguageContext";
 import { navLinks } from '../data/navData'
 import { NavLink } from "react-router-dom"
 import './nav.css'
@@ -9,7 +9,7 @@ export default function NavMobile() {
     const links = navLinks[lang];
 
     return(
-        <div className="hidden md:flex justify-between items-center nav-web mt-8 px-[10rem] z-10 sticky top-0">
+        <div className="hidden md:flex justify-between items-center nav-web mt-8 px-40 z-10 sticky top-0">
             <p className="nav-logo">Fleur Patisserie</p>
             <div className="flex">
                 { links.map((link) => (

@@ -2,9 +2,6 @@ import { locations, reserveLabels } from '../data/reserveData'
 import { useLanguage } from "../components/LanguageContext";
 import ReserveTableBtn from '../components/ReserveTableBtn'
 
-const Mendoza = locations[0];
-const BsAs = locations[1];
-
 // Mobile Images
 import MendozaMobile from '../assets/mobile-images/mendoza-reservation-mobile.png'
 import BuenosAiresMobile from '../assets/mobile-images/buenos-aires-reservation-mobile.png'
@@ -17,6 +14,9 @@ import BuenosAiresWeb from '../assets/web-images/buenos-aires-reservation-web.pn
 export default function Reserve() {
     const { lang } = useLanguage();
     const labels = reserveLabels[lang];
+
+    const Mendoza = locations[0];
+    const BsAs = locations[1];
 
     return (
         <div>
@@ -42,7 +42,7 @@ export default function Reserve() {
                         </div>
                         <p className='mt-4'>{labels.phone}:</p>
                         <p className='mb-8'>{Mendoza.phone}</p>
-                        <ReserveTableBtn link={labels.link} />
+                        <ReserveTableBtn link={Mendoza.link} />
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@ export default function Reserve() {
                         </div>
                         <p className='mt-4'>{labels.phone}:</p>
                         <p className='mb-8'>{BsAs.phone}</p>
-                        <ReserveTableBtn link={labels.link} />
+                        <ReserveTableBtn link={BsAs.link} />
                     </div>
                 </div>
             </div>

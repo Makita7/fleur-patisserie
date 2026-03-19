@@ -1,22 +1,36 @@
 
 import { useState, useEffect } from "react";
-import { useLanguage } from "../components/LanguageContext";
+import { useLanguage } from "./LanguageContext";
 import { HashLink } from "react-router-hash-link";
 import './nav.css'
+import type { SectionHash } from "../types/appTypes";
 
-export default function MenuNav({ activeSection }) {
+type Props = {
+    activeSection: SectionHash;
+}
 
-    const [activeHash, setActiveHash] = useState('#floral-pastries');
+type Language = "eng" | "spa";
+
+type Labels = {
+    floral: string,
+    herb: string;
+    seasonal: string;
+    drinks: string;
+}
+
+export default function MenuNav({ activeSection } : Props) {
+
+    const [activeHash, setActiveHash] = useState<SectionHash>('#floral-pastries');
 
     useEffect(() => {
         const handleHashChange = () => {
-        setActiveHash(window.location.hash);
+            setActiveHash(window.location.hash as SectionHash);
         };
 
         window.addEventListener("hashchange", handleHashChange);
 
         return () => {
-        window.removeEventListener("hashchange", handleHashChange);
+            window.removeEventListener("hashchange", handleHashChange);
         };
     }, []);
 
@@ -32,8 +46,9 @@ export default function MenuNav({ activeSection }) {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const { lang } = useLanguage();
-    const hashLabels = {
+    const { lang } = useLanguage() as { lang:Language };
+
+    const hashLabels: Record<Language, Labels> = {
         eng: {
             floral: "floral pastries",
             herb: "herb desserts",
