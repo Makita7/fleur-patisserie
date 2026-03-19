@@ -1,8 +1,7 @@
 import './App.css'
-import { useState, useEffect } from 'react';
 import { useLocation, Routes, Route } from "react-router-dom";
-import LanguageProvider from './components/LanguageContext.js';
 import ScrollToTop from './components/ScrollToTop.js'
+import { useLanguage } from './components/LanguageContext.js';
 
 
 // Pages
@@ -21,27 +20,26 @@ import Footer from './components/Footer.js'
 function App() {
 
   const { pathname } = useLocation();
+  const { lang } = useLanguage();
 
   return (
     <>
-      <LanguageProvider>
-          <NavMobile/>
-          <NavWeb/>
+      <NavMobile/>
+      <NavWeb/>
 
-          <ScrollToTop />
+      <ScrollToTop />
 
-          <div key={ pathname } className='page'>
-            <Routes>
-              <Route path='/' element={ <Menu/> } />
-              <Route path='/garden' element={ <Garden/> } />
-              <Route path='/about' element={ <About/> } />
-              <Route path='/visit' element={ <Visit/> } />
-              <Route path='/reserve' element={ <Reserve/> } />
-            </Routes>
-          </div>
+      <div key={ `${ pathname } - ${ lang }` } className='fade-in-out-animation'>
+        <Routes>
+          <Route path='/' element={ <Menu/> } />
+          <Route path='/garden' element={ <Garden/> } />
+          <Route path='/about' element={ <About/> } />
+          <Route path='/visit' element={ <Visit/> } />
+          <Route path='/reserve' element={ <Reserve/> } />
+        </Routes>
+      </div>
 
-        <Footer/>
-      </LanguageProvider>
+    <Footer/>
     </>
   )
 }
