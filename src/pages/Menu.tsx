@@ -62,7 +62,7 @@ useEffect(() => {
 }, []);
 
     return(
-        <>
+        <div className='page'>
             <img src={HeroMobile} alt='' className='block md:hidden' />
             <img src={HeroWeb} alt='' className='hidden md:block' />
             <div className='sticky top-0'>
@@ -111,7 +111,7 @@ useEffect(() => {
                     ))}
                 </div>
             </section>
-        </>
+        </div>
     )
 }
 

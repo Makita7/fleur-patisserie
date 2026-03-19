@@ -1,8 +1,8 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useLocation, Routes, Route } from "react-router-dom";
 import LanguageProvider from './components/LanguageContext.js';
 import ScrollToTop from './components/ScrollToTop.js'
-import { CSSTransition, TransitionGroup } from "react-transition-group"
 
 
 // Pages
@@ -20,33 +20,29 @@ import Footer from './components/Footer.js'
 
 function App() {
 
+  const { pathname } = useLocation();
+
   return (
-    <TransitionGroup>
-      <CSSTransition
-        key={location.pathname}
-        timeout={300}
-        classNames="page"
-        unmountOnExit
-      >
-        <LanguageProvider>
-          <BrowserRouter>
-            <NavMobile/>
-            <NavWeb/>
-            <ScrollToTop />
-            <div className="page">
-              <Routes>
-                <Route path='/' element={ <Menu/> } />
-                <Route path='/garden' element={ <Garden/> } />
-                <Route path='/about' element={ <About/> } />
-                <Route path='/visit' element={ <Visit/> } />
-                <Route path='/reserve' element={ <Reserve/> } />
-              </Routes>
-            </div>
-          </BrowserRouter>
-          <Footer/>
-        </LanguageProvider>
-      </CSSTransition>
-    </TransitionGroup>
+    <>
+      <LanguageProvider>
+          <NavMobile/>
+          <NavWeb/>
+
+          <ScrollToTop />
+
+          <div key={ pathname } className='page'>
+            <Routes>
+              <Route path='/' element={ <Menu/> } />
+              <Route path='/garden' element={ <Garden/> } />
+              <Route path='/about' element={ <About/> } />
+              <Route path='/visit' element={ <Visit/> } />
+              <Route path='/reserve' element={ <Reserve/> } />
+            </Routes>
+          </div>
+
+        <Footer/>
+      </LanguageProvider>
+    </>
   )
 }
 
